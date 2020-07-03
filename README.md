@@ -28,10 +28,10 @@ Things you may want to cover:
 |------|----|-------|
 |email|string|null: false|
 |password|string|null: false|
-|username|string|null: false|
+|name|string|null: false|
 ### Association
-- has_many :message
-- has_many :groups
+- has_many :messages
+- has_many :groups, through:  :groups_users
 
 ## messageテーブル
 |Column|Type|Options|
@@ -42,17 +42,17 @@ Things you may want to cover:
 |group_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- has_many :groups
+- belongs_to :group
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |group|text|null: false|
-|username|text|null: false|
+|name|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
-|tweet_id|integer|null: false, foreign_key: true|
+|message_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :message
+- has_many :messages, through:  :groups_users
 - belongs_to :user
 
 ## groups_usersテーブル
