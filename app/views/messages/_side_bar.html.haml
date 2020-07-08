@@ -1,0 +1,17 @@
+%body
+  .Side-bar
+    .Side-bar__header
+      .Side-bar__header--box
+        %p.Side-bar__header--box--name
+          user
+        %ul.Side-bar__header--box--icon
+          %li.Side-bar__header--box--icon--edit
+          = link_to "#" do
+            = icon('fa', 'edit', class: "tag")
+          %li.Side-bar__header--box--icon--cog
+          = link_to "#" do
+            = icon('fa', 'cog', class: "tag")
+    .Side-bar__group
+      .Side-bar__group--box
+        %p.message1 techcamp
+        %p.message2 まだメッセージがありません

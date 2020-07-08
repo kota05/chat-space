@@ -1,0 +1,28 @@
+%body
+  .Chat-main
+    .Chat-main__header
+      .Chat-main__header--box
+        %h2.current group
+        %ul.member
+          Member：
+          %li.name
+            user
+      %a.btn 
+        = link_to "#", class: "btn1" do
+          Edit
+    .Chat-main__message
+      .Chat-main__message--box
+        .Chat-main__message--box--name
+          name
+        .Chat-main__message--box--date
+          2020/07/08(wed) 00:00:00
+      .Chat-main__message--coment
+        hello!
+    .Chat-main__form
+      %form.formContents
+        %input.message{"placeholder": "type a message", "type": "text"}
+        .inputBox
+          %label.pic
+            = icon('far','image',class: 'icon')
+            %input.file{"type": "file"}
+        %input.sendBtn{"name": "commit", "type": "submit", "value": "Send"}
