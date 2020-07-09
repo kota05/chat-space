@@ -44,12 +44,16 @@
     background-color: #2f3e51;;
     &--box {
       padding: 0 0 40px;
-      color: #ffffff;
+      .link {
+        text-decoration: none;
+      }
       .message1 {
+        color: #ffffff;
         margin-bottom: 5px;
         font-size: 15px;
       }
       .message2 {
+        color: #ffffff;
         font-size: 11px;
       }
     }

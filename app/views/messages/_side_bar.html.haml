@@ -6,12 +6,16 @@
           = current_user.name
         %ul.Side-bar__header--box--icon
           %li.Side-bar__header--box--icon--edit
-          = link_to "#" do
+          = link_to new_group_path do
             = icon('fa', 'edit', class: "tag")
           %li.Side-bar__header--box--icon--cog
           = link_to edit_user_path(current_user) do
             = icon('fa', 'cog', class: "tag")
     .Side-bar__group
-      .Side-bar__group--box
-        %p.message1 techcamp
-        %p.message2 まだメッセージがありません
+      - current_user.groups.each do |group|
+        .Side-bar__group--box
+          = link_to "#", class: "link" do
+            %p.message1
+              = group.name
+            %p.message2
+              まだメッセージがありません
